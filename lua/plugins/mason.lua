@@ -10,8 +10,7 @@ return {
     config = function()
       require("mason-lspconfig").setup({
         ensure_installed = {
-          "clangd", "cmake",
-          "cssls", "tailwindcss",
+          "cmake", "cssls", "tailwindcss",
           "ast_grep", "jinja_lsp",
           "dotls", "emmet_ls",
           "gopls", "templ",
