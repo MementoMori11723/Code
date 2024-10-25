@@ -12,7 +12,6 @@ return {
         null_ls.builtins.formatting.phpcbf,
       }
     })
-    vim.keymap.set('n','<C-f>',
-      vim.lsp.buf.format,{})
+    vim.keymap.set('n', '<C-f>', vim.lsp.buf.format, {})
   end,
 }
