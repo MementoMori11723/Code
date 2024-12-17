@@ -17,7 +17,7 @@ return {
           "html", "jsonls", "lua_ls",
           "htmx", "eslint", "marksman",
           "tsp_server", "intelephense", "pyright",
-          "yamlls", "zls", "rust_analyzer",
+          "yamlls", "zls", "rust_analyzer", "templ",
         },
       })
     end,
