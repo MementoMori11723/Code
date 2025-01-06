@@ -10,6 +10,8 @@ return {
         null_ls.builtins.formatting.isort,
         null_ls.builtins.formatting.gofumpt,
         null_ls.builtins.formatting.phpcbf,
+        null_ls.builtins.formatting.sqlfmt,
+        null_ls.builtins.formatting.sqlls,
       }
     })
     vim.keymap.set('n', '<C-f>', vim.lsp.buf.format, {})
