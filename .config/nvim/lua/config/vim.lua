@@ -17,3 +17,5 @@ vim.cmd(":set shiftwidth=2")
 vim.cmd(":set hlsearch")
 vim.cmd("syntax on")
 vim.cmd(":set mouse=a")
+
+vim.api.nvim_set_keymap("i", "<M-f>", "if err != nil {\n\t \n}", { noremap = true, silent = true })
