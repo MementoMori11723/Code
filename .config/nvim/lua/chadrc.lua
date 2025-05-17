@@ -6,19 +6,27 @@
 local M = {}
 
 M.base46 = {
-	theme = "catppuccin",
-
-	-- hl_override = {
-	-- 	Comment = { italic = true },
-	-- 	["@comment"] = { italic = true },
-	-- },
+  theme = "catppuccin",
+  transparency = true,
+  hl_override = {
+    Comment = { italic = true },
+    ["@comment"] = { italic = true },
+  },
 }
 
--- M.nvdash = { load_on_startup = true }
--- M.ui = {
---       tabufline = {
---          lazyload = false
---      }
---}
+M.nvdash = { load_on_startup = true }
+M.ui = {
+  statusline = {
+    theme = "vscode_colored",
+    separator_style = "block",
+    order = { "mode", "file", "git", "%=", "lsp_msg", "%=", "diagnostics", "lsp", "cursor", "cwd" },
+  },
+  cmp = {
+    style = "atom",
+  },
+  tabufline = {
+    lazyload = false
+  }
+}
 
 return M
