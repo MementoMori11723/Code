@@ -107,9 +107,13 @@ source $ZSH/oh-my-zsh.sh
 eval $(ssh-agent -s) &> /dev/null
 ssh-add ~/.ssh/github &> /dev/null
 
+pokemon-colorscripts -rn charmeleon,snom,darkrai,pikachu,bulbasaur 
+
 # custom command
 code() {
-  tmux new-session -s atom nvim
+  if ! tmux a -d -t "atom"; then
+      tmux new-session -s atom "nvim $*"
+  fi
 }
 
 # fzf
