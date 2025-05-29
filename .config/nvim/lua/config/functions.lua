@@ -119,11 +119,15 @@ function M.neo_tree()
     window = {
       position = "right",
       width = 35,
+    },
+    source_selector = {
+      winbar = false,
+      statusline = true
+    },
+    filesystem = {
+      use_libuv_file_watcher = true
     }
   })
-
-  local events = require("neo-tree.events")
-  events.fire_event(events.GIT_EVENT)
 end
 
 function M.indent()
