@@ -5,7 +5,7 @@ return {
     name = "catppuccin", 
     priority = 1000,
     config = function()
-      func.catppuccin()
+      func.theme()
     end, 
   },
   {
