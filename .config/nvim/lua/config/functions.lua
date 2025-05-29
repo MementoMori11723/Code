@@ -4,24 +4,41 @@ local M = {}
 function M.highlight()
   require("nvim-treesitter.configs").setup({
     ensure_installed = {
-      "c", "lua",
-      "vim", "vimdoc",
-      "query", "markdown",
-      "markdown_inline", "bash",
-      "rust", "javascript",
-      "html", "css",
-      "typescript", "go",
-      "json", "yaml", "python",
-      "jinja", "php", "sql", "svelte",
-      "templ", "tsx", "toml",
-      "zig", "scss", "nginx", "make",
+      "c",
+      "lua",
+      "vim",
+      "vimdoc",
+      "query",
+      "markdown",
+      "markdown_inline",
+      "bash",
+      "rust",
+      "javascript",
+      "html",
+      "css",
+      "typescript",
+      "go",
+      "json",
+      "yaml",
+      "python",
+      "jinja",
+      "php",
+      "sql",
+      "svelte",
+      "templ",
+      "tsx",
+      "toml",
+      "zig",
+      "scss",
+      "nginx",
+      "make",
     },
     highlight = {
       enable = true,
     },
     indent = {
       enable = true,
-    }
+    },
   })
 end
 
@@ -29,23 +46,39 @@ function M.lsp_manager()
   local capabilities = require("cmp_nvim_lsp").default_capabilities()
   local mason_lspconfig = require("mason-lspconfig")
   local servers = {
-    "clangd", "cmake",
-    "cssls", "tailwindcss",
-    "ast_grep", "jinja_lsp",
-    "dotls", "emmet_ls",
-    "gopls", "templ",
-    "html", "jsonls", "lua_ls",
-    "htmx", "eslint", "marksman",
-    "tsp_server", "intelephense", "pyright",
-    "yamlls", "zls", "rust_analyzer",
+    "clangd",
+    "cmake",
+    "cssls",
+    "tailwindcss",
+    "ast_grep",
+    "jinja_lsp",
+    "dotls",
+    "emmet_ls",
+    "gopls",
+    "templ",
+    "html",
+    "jsonls",
+    "lua_ls",
+    "htmx",
+    "eslint",
+    "marksman",
+    "tsp_server",
+    "intelephense",
+    "pyright",
+    "yamlls",
+    "zls",
+    "rust_analyzer",
   }
   mason_lspconfig.setup({
     ensure_installed = servers,
   })
   for _, server in ipairs(servers) do
-    vim.lsp.config(server, vim.tbl_deep_extend("force", {
-      capabilities = capabilities
-    }, {}))
+    vim.lsp.config(
+      server,
+      vim.tbl_deep_extend("force", {
+        capabilities = capabilities,
+      }, {})
+    )
     vim.lsp.enable(server)
   end
 end
@@ -60,7 +93,7 @@ function M.lsp_settings()
       null_ls.builtins.formatting.isort,
       null_ls.builtins.formatting.gofumpt,
       null_ls.builtins.formatting.phpcbf,
-    }
+    },
   })
 end
 
@@ -109,7 +142,7 @@ function M.theme()
       operators = { "italic" },
     },
   })
-  vim.cmd.colorscheme "catppuccin"
+  vim.cmd.colorscheme("catppuccin")
 end
 
 function M.neo_tree()
@@ -121,12 +154,42 @@ function M.neo_tree()
       width = 35,
     },
     source_selector = {
-      winbar = false,
-      statusline = true
+      winbar = true,
+      statusline = false,
+      separator = "",
+      separator_active = "",
+      content_layout = "center",
+      padding = 2,
     },
-    filesystem = {
-      use_libuv_file_watcher = true
-    }
+  })
+end
+
+function M.cmd_ui()
+  require("noice").setup()
+  require("notify").setup({
+    background_colour = "#000000",
+  })
+end
+
+function M.cmd_tab()
+  vim.opt.termguicolors = true
+  local bufferline = require("bufferline")
+  bufferline.setup({
+    options = {
+      style_preset = bufferline.style_preset.minimal,
+      indicator = {
+        style = "none",
+      },
+      separator_style = "thin",
+      numbers = "ordinal",
+      close_command = "bdelete! %d",
+      right_mouse_command = function(buf_id)
+        vim.cmd("vsplit")
+        vim.cmd("buffer " .. buf_id)
+      end,
+      middle_mouse_command = "bdelete! %d",
+      show_buffer_close_icons = true,
+    },
   })
 end
 

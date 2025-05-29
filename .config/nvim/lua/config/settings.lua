@@ -17,5 +17,6 @@ vim.cmd(":set tabstop=2")
 vim.cmd(":set softtabstop=2")
 vim.cmd(":set shiftwidth=2")
 vim.cmd(":set hlsearch")
-vim.cmd(":set mouse=a") 
+vim.cmd(":set mouse=a")
+vim.cmd(":set mousemoveevent")
 vim.g.loaded_perl_provider = 0

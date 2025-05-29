@@ -1,8 +1,8 @@
 return {
   {
-    'windwp/nvim-autopairs',
+    "windwp/nvim-autopairs",
     event = "InsertEnter",
-    config = true
+    config = true,
   },
   {
     "kdheepak/lazygit.nvim",
@@ -18,7 +18,17 @@ return {
       "nvim-lua/plenary.nvim",
     },
     keys = {
-      { "<C-g>", "<cmd>LazyGit<cr>", desc = "LazyGit" }
-    }
-  }
+      { "<C-g>", "<cmd>LazyGit<cr>", desc = "LazyGit" },
+    },
+  },
+  {
+    "nvim-telescope/telescope.nvim",
+    tag = "0.1.8",
+    dependencies = { "nvim-lua/plenary.nvim" },
+  },
+  {
+    "akinsho/toggleterm.nvim",
+    version = "*",
+    config = true
+  },
 }
