@@ -154,12 +154,8 @@ function M.neo_tree()
       width = 35,
     },
     source_selector = {
-      winbar = true,
+      winbar = false,
       statusline = false,
-      separator = "",
-      separator_active = "",
-      content_layout = "center",
-      padding = 2,
     },
   })
 end
