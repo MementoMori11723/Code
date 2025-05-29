@@ -20,5 +20,12 @@ return {
     config = function()
       func.neo_tree()
     end,
+  },
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    config = function()
+      func.indent()
+    end,
   }
 }
