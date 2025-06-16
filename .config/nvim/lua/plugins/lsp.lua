@@ -5,7 +5,7 @@ return {
   },
   {
     "nvim-treesitter/nvim-treesitter",
-    branch = 'master',
+    branch = "master",
     lazy = false,
     build = ":TSUpdate",
     config = function()
@@ -51,5 +51,10 @@ return {
     config = function()
       func.lsp_cmp()
     end,
+  },
+  {
+    "mrcjkb/rustaceanvim",
+    version = "^6",
+    lazy = false,
   },
 }
