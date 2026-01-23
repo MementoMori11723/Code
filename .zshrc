@@ -141,3 +141,6 @@ export PATH="$HOME/.flutter-app/bin:$PATH"
 export PATH=/home/violet/.opencode/bin:$PATH
 export CHROME_EXECUTABLE=/usr/bin/chromium
 
+chpwd() {
+  ls
+}

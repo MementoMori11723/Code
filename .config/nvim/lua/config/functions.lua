@@ -129,21 +129,11 @@ end
 
 -- ui.lua
 function M.theme()
-	require("catppuccin").setup({
-		flavour = "mocha",
-		transparent_background = true,
-		show_end_of_buffer = true,
-		styles = {
-			comments = { "italic" },
-			conditionals = { "italic" },
-			keywords = { "italic" },
-			strings = { "italic", "underline" },
-			numbers = { "bold" },
-			booleans = { "bold" },
-			operators = { "italic" },
-		},
-	})
-	vim.cmd.colorscheme("catppuccin")
+	vim.g.sonokai_style = "atlantis"
+	vim.g.sonokai_better_performance = 1
+	vim.g.sonokai_transparent_background = 2
+	vim.g.sonokai_enable_italic = 1
+	vim.cmd.colorscheme("sonokai")
 end
 
 function M.neo_tree()

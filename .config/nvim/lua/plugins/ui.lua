@@ -4,9 +4,6 @@ return {
 		"catppuccin/nvim",
 		name = "catppuccin",
 		priority = 1000,
-		config = function()
-			func.theme()
-		end,
 	},
 	{
 		"akinsho/horizon.nvim",
@@ -72,6 +69,14 @@ return {
 					theme = "nightfly",
 				},
 			})
+		end,
+	},
+	{
+		"sainnhe/sonokai",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			func.theme()
 		end,
 	},
 }
