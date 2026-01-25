@@ -181,7 +181,24 @@ function M.cmd_tab()
 end
 
 function M.indent()
-	require("ibl").setup()
+	local hooks = require("ibl.hooks")
+	hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+		vim.api.nvim_set_hl(0, "IblSonokaiWhite", { fg = "#b1b9bd" })
+	end)
+	require("ibl").setup({
+		enabled = true,
+		indent = {
+			highlight = "IblSonokaiWhite",
+			char = "▎",
+		},
+		scope = {
+			enabled = true,
+			char = "▎",
+			show_start = false,
+			show_end = false,
+			highlight = "IblSonokaiWhite",
+		},
+	})
 end
 
 return M
