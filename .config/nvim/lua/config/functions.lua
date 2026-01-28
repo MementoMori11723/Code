@@ -183,7 +183,7 @@ end
 function M.indent()
 	local hooks = require("ibl.hooks")
 	hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
-		vim.api.nvim_set_hl(0, "IblSonokaiWhite", { fg = "#b1b9bd" })
+		vim.api.nvim_set_hl(0, "IblSonokaiWhite", { fg = "#6b7275" })
 	end)
 	require("ibl").setup({
 		enabled = true,
