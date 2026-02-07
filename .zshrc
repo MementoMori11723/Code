@@ -135,12 +135,17 @@ export PATH="$HOME/.local/bin:$PATH"
 
 alias md="mdcat --paginate"
 
-export PATH="$HOME/.flutter-app/bin:$PATH"
-
-# opencode
-export PATH=/home/violet/.opencode/bin:$PATH
 export CHROME_EXECUTABLE=/usr/bin/chromium
 
 chpwd() {
+  if [[ -f "./do.sh" ]] then
+    alias do="./do.sh"
+    echo -e "\033[1;34m[INFO]\033[0m Local 'do' command enabled."
+  else
+    if alias do >/dev/null 2>&1; then
+      unalias do
+      echo -e "\033[1;33m[INFO]\033[0m Local 'do' command disabled."
+    fi
+  fi
   ls
 }

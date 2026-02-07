@@ -19,4 +19,6 @@ vim.cmd(":set shiftwidth=2")
 vim.cmd(":set hlsearch")
 vim.cmd(":set mouse=a")
 vim.cmd(":set mousemoveevent")
+vim.cmd("filetype indent on")
+vim.g.is_bash = 1
 vim.g.loaded_perl_provider = 0
