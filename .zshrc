@@ -99,8 +99,9 @@ alias md="mdcat --paginate"
 export CHROME_EXECUTABLE=/usr/bin/chromium
 
 chpwd() {
-  if [[ -f "./do.sh" ]] then
-    alias do="./do.sh"
+  local file="./_do.sh"
+  if [[ -f "$file" ]] then
+    alias do="$file"
     echo -e "\033[1;34m[INFO]\033[0m Local 'do' command enabled."
   else
     if alias do >/dev/null 2>&1; then
