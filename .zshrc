@@ -71,7 +71,7 @@ source $ZSH/oh-my-zsh.sh
 
 # ssh
 eval $(ssh-agent -s) &> /dev/null
-ssh-add ~/.ssh/github &> /dev/null
+ssh-add ~/.ssh/github-action-key &> /dev/null
 
 # Pokemon script at the start of new zsh.
 pokemon-colorscripts -rn charmeleon,snom,darkrai,pikachu,bulbasaur 

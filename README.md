@@ -8,3 +8,8 @@ A personal neovim setup for go developer who likes to use neovim as an IDE with 
 - Code formatting
 - Code linting
 - Code refactoring
+
+## Command to link the dotfiles.
+```bash
+    stow -R -t ~ .
+```
