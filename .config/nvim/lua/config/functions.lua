@@ -139,6 +139,14 @@ function M.neo_tree()
   require("neo-tree").setup({
     close_if_last_window = true,
     popup_border_style = "rounded",
+    default_component_configs = {
+      icon = {
+        enabled = false,
+        folder_closed = "+",
+        folder_open = "-",
+        folder_empty = "  ",
+      },
+    },
     window = {
       position = "right",
       width = 35,
